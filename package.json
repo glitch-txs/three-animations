@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "npx rome format src --write"
   },
   "dependencies": {
     "@react-three/drei": "^9.77.9",
@@ -22,5 +23,8 @@
     "react-dom": "18.2.0",
     "three": "^0.154.0",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "rome": "12.1.3"
   }
 }
