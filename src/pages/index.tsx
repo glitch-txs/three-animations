@@ -4,6 +4,8 @@ import { Canvas } from "@react-three/fiber"
 import World from "@/components/World"
 import { ScrollControls } from "@react-three/drei"
 import Arrows from "@/components/arrows/Arrows"
+import { Suspense } from "react"
+import Loader from "@/components/loader/Loader"
 
 export default function Home() {
 	return (
@@ -15,12 +17,14 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className={styles.main}>
-				<Arrows />
-				<Canvas>
-					<ScrollControls pages={5} damping={0.1}>
-						<World />
-					</ScrollControls>
-				</Canvas>
+        <Suspense fallback={<Loader/>} >
+          <Arrows/>
+          <Canvas>
+            <ScrollControls pages={5} damping={0.1}>
+              <World />
+            </ScrollControls>
+          </Canvas>
+        </Suspense>
 			</main>
 		</>
 	)

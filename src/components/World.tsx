@@ -11,7 +11,11 @@ import Portal from "@/components/Portal"
 import { portals } from "@/constants/portals"
 import { easing } from "maath"
 import * as THREE from "three"
-import Starship from "./Starship"
+import dynamic from 'next/dynamic'
+
+const Starship = dynamic(() => import("./Starship"), {
+    suspense: true,
+})
 
 const World = () => {
 	const cameraRef = useRef<THREE.Group>(null)
