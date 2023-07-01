@@ -2,6 +2,7 @@ import Head from "next/head"
 import styles from "@/styles/Home.module.css"
 import { Canvas } from "@react-three/fiber"
 import World from "@/components/World"
+import { OrbitControls, ScrollControls } from "@react-three/drei"
 
 export default function Home() {
 	return (
@@ -13,8 +14,10 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className={styles.main}>
-				<Canvas shadows camera={{ position: [0, 0, 10], fov: 30 }}>
-          <World/>
+				<Canvas>
+					<ScrollControls pages={5} damping={0.1} >
+						<World />
+					</ScrollControls>
 				</Canvas>
 			</main>
 		</>
