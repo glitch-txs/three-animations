@@ -1,11 +1,9 @@
 import Head from "next/head"
 import styles from "@/styles/Home.module.css"
-import { Canvas } from "@react-three/fiber"
-import World from "@/components/World"
-import { ScrollControls } from "@react-three/drei"
+import { Loader, ScrollControls } from "@react-three/drei"
+import { Canvas } from '@react-three/fiber'
 import Arrows from "@/components/arrows/Arrows"
-import { Suspense } from "react"
-import Loader from "@/components/loader/Loader"
+import World from "@/components/World"
 
 export default function Home() {
 	return (
@@ -17,14 +15,17 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className={styles.main}>
-        <Suspense fallback={<Loader/>} >
-          <Arrows/>
-          <Canvas>
-            <ScrollControls pages={5} damping={0.1}>
-              <World />
-            </ScrollControls>
-          </Canvas>
-        </Suspense>
+				<Arrows/>
+				<Canvas>
+					<ScrollControls pages={5} damping={0.1}>
+						<World />
+					</ScrollControls>
+				</Canvas>
+				<Loader
+					containerStyles={{fontSize: '40px', textAlign:'center', width:'100%'}}
+					innerStyles={{width:'100%', textAlign:'center'}}
+					barStyles={{height:'14px', width:'200px', border: 'none'}}
+				/>
 			</main>
 		</>
 	)
