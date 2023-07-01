@@ -1,9 +1,13 @@
 import { OrbitControls, useTexture, Environment, MeshPortalMaterial, RoundedBox } from "@react-three/drei";
 import * as THREE from 'three'
 
-export const Experience = () => {
+type Props = {
+  texture: string
+}
 
-  const map = useTexture('textures/digital_painting_space.jpg')
+const Portal = ({texture}: Props) => {
+  
+  const map = useTexture(texture)
 
   return (
     <>
@@ -23,4 +27,6 @@ export const Experience = () => {
 
     </>
   );
-};
+}
+
+export default Portal
