@@ -27,7 +27,6 @@ const Portal = ({ texture, id }: Props) => {
 
 	useFrame(() => {
 		if (!mesh.current?.rotation) return
-		mesh.current.rotation.y += 0.003
 		mesh.current.rotation.x += 0.003
 
 		if (portalRef.current) {
@@ -62,7 +61,7 @@ const Portal = ({ texture, id }: Props) => {
 				<MeshPortalMaterial side={THREE.DoubleSide}>
 					<ambientLight intensity={1} />
 					<Environment preset="sunset" />
-					<mesh ref={mesh}>
+					<mesh ref={mesh} scale={1.2}>
 						<sphereGeometry args={[15, 64, 64]} />
 						<meshStandardMaterial map={map} side={THREE.BackSide} />
 					</mesh>

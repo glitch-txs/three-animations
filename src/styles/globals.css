@@ -1,6 +1,7 @@
 :root{
   --white:#F2F7FB;
   --black: #0C0C0D;
+  --glow-color: hsl(186 100% 69%);
 }
 
 body{

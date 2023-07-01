@@ -2,7 +2,8 @@ import Head from "next/head"
 import styles from "@/styles/Home.module.css"
 import { Canvas } from "@react-three/fiber"
 import World from "@/components/World"
-import { OrbitControls, ScrollControls } from "@react-three/drei"
+import { ScrollControls } from "@react-three/drei"
+import Arrows from "@/components/arrows/Arrows"
 
 export default function Home() {
 	return (
@@ -14,8 +15,9 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className={styles.main}>
+				<Arrows />
 				<Canvas>
-					<ScrollControls pages={5} damping={0.1} >
+					<ScrollControls pages={5} damping={0.1}>
 						<World />
 					</ScrollControls>
 				</Canvas>
