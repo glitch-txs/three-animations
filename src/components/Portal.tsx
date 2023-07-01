@@ -4,15 +4,15 @@ import {
 	Environment,
 	MeshPortalMaterial,
 	RoundedBox,
-} from "@react-three/drei";
-import * as THREE from "three";
+} from "@react-three/drei"
+import * as THREE from "three"
 
 type Props = {
-	texture: string;
-};
+	texture: string
+}
 
 const Portal = ({ texture }: Props) => {
-	const map = useTexture(texture);
+	const map = useTexture(texture)
 
 	return (
 		<>
@@ -30,7 +30,7 @@ const Portal = ({ texture }: Props) => {
 				</MeshPortalMaterial>
 			</RoundedBox>
 		</>
-	);
-};
+	)
+}
 
-export default Portal;
+export default Portal
