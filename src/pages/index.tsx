@@ -2,6 +2,7 @@ import Head from "next/head"
 import styles from "@/styles/Home.module.css"
 import { Canvas } from "@react-three/fiber"
 import Portal from "@/components/Portal"
+import { portals } from "@/constants/portals"
 
 export default function Home() {
 	return (
@@ -14,7 +15,9 @@ export default function Home() {
 			</Head>
 			<main className={styles.main}>
 				<Canvas shadows camera={{ position: [0, 0, 10], fov: 30 }}>
-					<Portal texture="textures/digital_painting_space.jpg" />
+					{portals.map((portal, id) => (
+						<Portal texture={portal.src} id={id} />
+					))}
 				</Canvas>
 			</main>
 		</>
